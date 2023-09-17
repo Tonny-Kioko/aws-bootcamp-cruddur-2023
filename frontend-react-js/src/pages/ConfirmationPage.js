@@ -3,8 +3,8 @@ import React from "react";
 import { useParams } from 'react-router-dom';
 import {ReactComponent as Logo} from '../components/svg/logo.svg';
 
-// [TODO] Authenitcation
-import Cookies from 'js-cookie'
+// [TODO] Authenication
+import { Auth } from 'aws-amplify';
 
 export default function ConfirmationPage() {
   const [email, setEmail] = React.useState('');
@@ -22,7 +22,7 @@ export default function ConfirmationPage() {
   }
 
   const resend_code = async (event) => {
-    setCognitoErrors('')
+    setErrors('')
     try {
       await Auth.resendSignUp(email);
       console.log('code resent successfully');
@@ -33,21 +33,21 @@ export default function ConfirmationPage() {
       // for this to be an okay match?
       console.log(err)
       if (err.message == 'Username cannot be empty'){
-        setCognitoErrors("You need to provide an email in order to send Resend Activation Code")   
+        setCognitoErrors("You need to provide an email in order to send Resend Activiation Code")   
       } else if (err.message == "Username/client id combination not found."){
         setCognitoErrors("Email is invalid or cannot be found.")   
       }
     }
   }
-  
+
   const onsubmit = async (event) => {
     event.preventDefault();
-    setCognitoErrors('')
+    setErrors('')
     try {
       await Auth.confirmSignUp(email, code);
       window.location.href = "/"
     } catch (error) {
-      setCognitoErrors(error.message)
+      setErrors(error.message)
     }
     return false
   }

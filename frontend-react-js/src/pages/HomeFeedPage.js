@@ -10,7 +10,9 @@ import ReplyForm from '../components/ReplyForm';
 import { Auth } from 'aws-amplify';
 
 // [TODO] Authentication
-import Cookies from 'js-cookie'
+
+
+
 
 export default function HomeFeedPage() {
   const [activities, setActivities] = React.useState([]);
@@ -19,6 +21,8 @@ export default function HomeFeedPage() {
   const [replyActivity, setReplyActivity] = React.useState({});
   const [user, setUser] = React.useState(null);
   const dataFetchedRef = React.useRef(false);
+
+  
   
 
   const loadData = async () => {
