@@ -136,3 +136,11 @@ def data_activities_reply(activity_uuid):
 
 if __name__ == "__main__":
   app.run(debug=True)
+
+cors = CORS(
+  app, 
+  resources={r"/api/*": {"origins": origins}},
+  headers=['Content-Type', 'Authorization'], 
+  expose_headers='Authorization',
+  methods="OPTIONS,GET,HEAD,POST"
+)
