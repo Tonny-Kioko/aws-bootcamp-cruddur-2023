@@ -2,7 +2,7 @@ aws rds create-db-instance \
   --db-instance-identifier cruddur-db-instance \
   --db-instance-class db.t3.micro \
   --engine postgres \
-  --engine-version  14.6 \
+  --engine-version 14.6 \
   --master-username tonny \
   --master-user-password strongDatabase1 \
   --allocated-storage 20 \
@@ -15,5 +15,4 @@ aws rds create-db-instance \
   --publicly-accessible \
   --storage-encrypted \
   --enable-performance-insights \
-  --performance-insights-retention-period 7 \
-  --no-deletion-protection
+  --performance-insights-retention-period 7
