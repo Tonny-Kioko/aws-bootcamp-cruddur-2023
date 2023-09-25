@@ -20,6 +20,9 @@ export default function ConfirmationPage() {
   const email_onchange = (event) => {
     setEmail(event.target.value);
   }
+  function setCognitoErrors(errorMessage) {
+    // Your code to handle the error message goes here
+}
 
   const resend_code = async (event) => {
     setErrors('')
@@ -33,7 +36,7 @@ export default function ConfirmationPage() {
       // for this to be an okay match?
       console.log(err)
       if (err.message == 'Username cannot be empty'){
-        setCognitoErrors("You need to provide an email in order to send Resend Activiation Code")   
+        setCognitoErrors("You need to provide an email in order to send Resend Activation Code")   
       } else if (err.message == "Username/client id combination not found."){
         setCognitoErrors("Email is invalid or cannot be found.")   
       }

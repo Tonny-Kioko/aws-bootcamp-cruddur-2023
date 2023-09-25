@@ -13,6 +13,10 @@ export default function RecoverPage() {
   const [code, setCode] = React.useState('');
   const [errors, setErrors] = React.useState('');
   const [formState, setFormState] = React.useState('send_code');
+  function setCognitoErrors(errorMessage) {
+    // Your code to handle the error message goes here
+}
+
 
   const onsubmit_send_code = async (event) => {
     event.preventDefault();
