@@ -2,11 +2,11 @@ aws rds create-db-instance \
   --db-instance-identifier cruddur-db-instance \
   --db-instance-class db.t3.micro \
   --engine postgres \
-  --engine-version 14.6 \
+  --engine-version  14.6 \
   --master-username tonny \
   --master-user-password strongDatabase1 \
   --allocated-storage 20 \
-  --availability-zone us-east-1a \
+  --availability-zone us-east-1b \
   --backup-retention-period 0 \
   --port 5432 \
   --no-multi-az \
@@ -15,4 +15,7 @@ aws rds create-db-instance \
   --publicly-accessible \
   --storage-encrypted \
   --enable-performance-insights \
-  --performance-insights-retention-period 7
+  --performance-insights-retention-period 7 \
+  --no-deletion-protection \
+  --vpc-security-group-ids sg-0f0d9ff8a5530b49d \  
+
