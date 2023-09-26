@@ -1,0 +1,4 @@
+ uuid | user_uuid | message | replies_count | reposts_count | likes_count | reply_to_activity_uuid | expires_at | created_at 
+------+-----------+---------+---------------+---------------+-------------+------------------------+------------+------------
+(0 rows)
+
